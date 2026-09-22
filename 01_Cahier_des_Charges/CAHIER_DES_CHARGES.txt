@@ -1,0 +1,133 @@
+========================================
+CAHIER DES CHARGES
+Projet Final — Bibliothèque en Ligne
+========================================
+Nom : KOUASSI Amos
+Formation : Développement Web Niveau Intermédiaire
+Date : Septembre 2026
+
+========================================
+1. CONTEXTE ET OBJECTIFS
+========================================
+
+Une bibliothèque souhaite mettre en place un site web interactif
+permettant à ses utilisateurs de gérer une collection de livres.
+Le site doit offrir les fonctionnalités de recherche, consultation,
+ajout, modification et suppression de livres, ainsi qu'une liste
+de lecture personnelle.
+
+Objectifs du projet :
+- Créer une interface web moderne et responsive
+- Implémenter un CRUD complet pour la gestion des livres
+- Utiliser les technologies HTML, CSS, JavaScript, PHP et MySQL
+- Appliquer les bonnes pratiques de développement web
+
+========================================
+2. PÉRIMÈTRE DU PROJET
+========================================
+
+2.1 Fonctionnalités principales
+---------------------------------
+- Page d'accueil avec présentation et recherche
+- Recherche de livres par titre ou auteur
+- Affichage des détails de chaque livre
+- Ajout de livres à la collection
+- Modification des informations d'un livre
+- Suppression de livres
+- Gestion d'une liste de lecture personnelle
+- Affichage de la liste de lecture avec suppression
+
+2.2 Utilisateurs cibles
+------------------------
+- Lecteurs inscrits souhaitant gérer leur liste de lecture
+- Bibliothécaires souhaitant gérer la collection
+
+========================================
+3. SPÉCIFICATIONS FONCTIONNELLES
+========================================
+
+3.1 Page d'accueil (index.html)
+---------------------------------
+- Description accueillante de la bibliothèque
+- Instructions d'utilisation
+- Formulaire de recherche (titre ou auteur)
+- Affichage de la collection en grille
+
+3.2 Page de détails (details.html)
+------------------------------------
+- Titre du livre
+- Auteur
+- Maison d'édition
+- Nombre d'exemplaires disponibles
+- Description complète
+- Bouton "Ajouter à ma liste"
+- Boutons Modifier / Supprimer
+
+3.3 Page d'ajout (ajouter.html)
+---------------------------------
+- Formulaire : titre, auteur, description, édition, exemplaires
+- Validation côté client
+
+3.4 Page de modification (modifier.html)
+-----------------------------------------
+- Formulaire pré-rempli avec les données existantes
+- Validation côté client
+
+3.5 Liste de lecture (wishlist.html)
+--------------------------------------
+- Affichage des livres empruntés
+- Date d'emprunt et de retour
+- Bouton "Retirer"
+
+========================================
+4. SPÉCIFICATIONS TECHNIQUES
+========================================
+
+4.1 Architecture
+-----------------
+- Frontend : HTML5, CSS3, JavaScript (fetch API)
+- Backend : PHP 8.x
+- Base de données : MySQL 8.x
+- Serveur local : Laragon
+
+4.2 Base de données
+--------------------
+Tables :
+- livres (id, titre, auteur, description, maison_edition, nombre_exemplaire)
+- lecteurs (id, nom, prenom, email)
+- liste_lecture (id, id_livre, id_lecteur, date_emprunt, date_retour)
+
+4.3 Sécurité
+--------------
+- Requêtes préparées PDO (prévention injection SQL)
+- Validation des entrées utilisateur
+- Échappement HTML (prévention XSS)
+
+========================================
+5. PLANNING
+========================================
+
+Semaine 1 : Conception et cahier des charges
+Semaine 2 : Développement frontend (HTML/CSS/JS)
+Semaine 3 : Développement backend (PHP/MySQL)
+Semaine 4 : Tests, corrections et déploiement
+
+========================================
+6. LIVRABLES
+========================================
+
+- Cahier des charges (ce document)
+- Wireframing des pages
+- Documentation technique
+- Code source complet
+- README avec instructions d'installation
+
+========================================
+7. CONTRAINTES
+========================================
+
+- Respecter les consignes de l'énoncé
+- Site responsive (mobile/desktop)
+- Code propre et commenté
+- Fonctionnalités CRUD complètes
+- Base de données relationnelle

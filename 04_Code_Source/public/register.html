@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription — Bibliothèque</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="auth-page">
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="auth-logo">📚</div>
+        <h1>Créer un compte</h1>
+        <p>Rejoignez notre bibliothèque</p>
+      </div>
+
+      <div id="reg-error" class="alert alert-error" style="display:none"></div>
+      <div id="reg-success" class="alert alert-success" style="display:none"></div>
+
+      <form id="register-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" required>
+          </div>
+          <div class="form-group">
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="votre@email.com">
+        </div>
+        <div class="form-group">
+          <label for="password">Mot de passe</label>
+          <input type="password" id="password" name="password" required minlength="6" placeholder="••••••••">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
+      </form>
+
+      <div class="auth-footer">
+        <p>Déjà un compte ? <a href="login.html">Se connecter</a></p>
+        <a href="index.html" class="link-muted">Retour à l'accueil</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('register-form').addEventListener('submit', async function(e){
+      e.preventDefault();
+      const fd = new FormData(this);
+      const res = await fetch('api_auth.php?action=register',{method:'POST',body:fd});
+      const data = await res.json();
+      if(data.ok){
+        document.getElementById('reg-success').textContent = 'Compte créé ! Vous pouvez vous connecter.';
+        document.getElementById('reg-success').style.display = 'block';
+        document.getElementById('reg-error').style.display = 'none';
+        this.reset();
+      } else {
+        document.getElementById('reg-error').textContent = data.msg;
+        document.getElementById('reg-error').style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

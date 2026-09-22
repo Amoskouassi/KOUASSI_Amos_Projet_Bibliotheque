@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion — Bibliothèque</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="auth-page">
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="auth-logo">📚</div>
+        <h1>Bibliothèque en Ligne</h1>
+        <p>Connectez-vous à votre compte</p>
+      </div>
+
+      <div id="login-error" class="alert alert-error" style="display:none"></div>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="votre@email.com">
+        </div>
+        <div class="form-group">
+          <label for="password">Mot de passe</label>
+          <input type="password" id="password" name="password" required placeholder="••••••••">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+      </form>
+
+      <div class="auth-footer">
+        <p>Pas encore de compte ? <a href="register.html">S'inscrire</a></p>
+        <a href="index.html" class="link-muted">Retour à l'accueil</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('login-form').addEventListener('submit', async function(e){
+      e.preventDefault();
+      const fd = new FormData(this);
+      fd.append('action','login');
+      const res = await fetch('api_auth.php?action=login',{method:'POST',body:fd});
+      const data = await res.json();
+      if(data.ok){
+        window.location.href = data.role==='admin' ? 'admin.php' : 'index.html';
+      } else {
+        const el = document.getElementById('login-error');
+        el.textContent = data.msg;
+        el.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
