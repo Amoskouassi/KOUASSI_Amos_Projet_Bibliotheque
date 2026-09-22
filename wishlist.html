@@ -1,0 +1,245 @@
+<!-- Ma liste de lecture - Bibliothèque -->
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-bright": "#faf8ff", "error": "#ba1a1a", "secondary-fixed-dim": "#c3c7cb", "secondary-container": "#dce0e4", "surface-dim": "#d2d9f4", "surface-container": "#eaedff", "on-background": "#131b2e", "primary-fixed": "#dbe1ff", "inverse-surface": "#283044", "surface-container-low": "#f2f3ff", "on-tertiary": "#ffffff", "surface-container-high": "#e2e7ff", "on-secondary": "#ffffff", "on-primary-container": "#eeefff", "surface-container-highest": "#dae2fd", "surface": "#faf8ff", "on-tertiary-fixed": "#002113", "primary-fixed-dim": "#b4c5ff", "on-primary": "#ffffff", "on-tertiary-container": "#bdffdb", "outline-variant": "#c3c6d7", "tertiary-fixed-dim": "#4edea3", "primary": "#004ac6", "tertiary-fixed": "#6ffbbe", "on-secondary-container": "#5e6367", "inverse-on-surface": "#eef0ff", "on-secondary-fixed-variant": "#43474b", "secondary": "#5a5f62", "on-tertiary-fixed-variant": "#005236", "tertiary": "#006242", "primary-container": "#2563eb", "on-surface": "#131b2e", "on-secondary-fixed": "#171c1f", "on-primary-fixed": "#00174b", "tertiary-container": "#007d55", "error-container": "#ffdad6", "inverse-primary": "#b4c5ff", "on-error-container": "#93000a", "on-error": "#ffffff", "surface-tint": "#0053db", "outline": "#737686", "surface-variant": "#dae2fd", "on-primary-fixed-variant": "#003ea8", "on-surface-variant": "#434655", "surface-container-lowest": "#ffffff", "background": "#faf8ff", "secondary-fixed": "#dfe3e7" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter-sm": "1rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "margin-sm": "1rem", "gutter": "1.5rem", "space-xl": "2rem", "margin": "2rem", "space-md": "1rem" }, fontFamily: { "label-md": ["Inter"], "headline-sm": ["Inter"], "code-sm": ["JetBrains Mono"], "headline-lg": ["Inter"], "body-sm": ["Inter"], "headline-lg-mobile": ["Inter"], "body-lg": ["Inter"], "display-lg": ["Inter"], "headline-md": ["Inter"], "label-sm": ["Inter"], "body-md": ["Inter"] }, fontSize: { "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "code-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container"><span class="material-symbols-outlined text-[20px]">auto_stories</span></div><span class="font-headline-md text-headline-md text-on-surface tracking-tight">Bibliothèque</span></div><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full pt-16 pb-28 px-gutter-sm bg-surface flex flex-col"><div class="flex flex-col w-full pb-6">
+<!-- Interactive Feedback Banner (hidden by default) -->
+<div class="fixed top-20 left-4 right-4 z-50 transform -translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="toast-notification">
+<div class="bg-on-surface text-surface-bright px-space-md py-space-sm rounded-lg shadow-xl flex items-center justify-between mx-auto max-w-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary-fixed text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm font-medium" id="toast-message">Livre retiré de la liste</span>
+</div>
+<button class="text-surface-dim hover:text-surface-bright" onclick="dismissToast()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Header Title & Subtitle Section -->
+<div class="mb-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[22px]">collections_bookmark</span>
+</div>
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold tracking-tight">Ma Liste de Lecture</h1>
+<p class="font-body-md text-body-md text-secondary">Les livres que vous souhaitez lire</p>
+</div>
+</div>
+<span class="bg-surface-container-high text-primary px-space-sm py-1 rounded-full font-label-sm text-label-sm font-semibold shadow-sm" id="item-counter">
+        3 emprunts
+      </span>
+</div>
+<!-- Quick Stats Bento Overview -->
+<div class="grid grid-cols-2 gap-space-sm mt-4">
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">hourglass_top</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm text-secondary truncate">Plus proche retour</p>
+<p class="font-headline-sm text-headline-sm text-on-surface font-semibold">26 Mars</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">check_box</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm text-secondary truncate">En règle</p>
+<p class="font-headline-sm text-headline-sm text-on-surface font-semibold">3 actifs</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Responsive Card List / Mobile-Optimized Data Surface -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden w-full">
+<!-- List Column Header -->
+<div class="bg-surface-container-low px-4 py-3 flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-bold uppercase tracking-wider">Vos Emprunts Récents</span>
+<span class="font-code-sm text-code-sm text-secondary">Synchronisé</span>
+</div>
+<!-- Item Rows Container -->
+<div class="flex flex-col" id="reading-list-container">
+<!-- Item 1: 1984 -->
+<div class="p-4 bg-surface-container-lowest transition-all duration-300 hover:bg-surface-container-low/60 flex flex-col gap-3" id="row-book-1">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-12 h-16 rounded-lg bg-surface-container-high overflow-hidden shrink-0 shadow-sm flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Vintage retro cover design of George Orwell's classic dystopian novel 1984 with dark navy and crimson geometric typography, minimal editorial paper texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCizRhbDRH41EKfz_bR3-VssJrLbKdzdfU_IwUbL1pv95qIP1RGa7i8isz-LEFPNC5eUh1niQ_vEHL6XEcRSS7xsxcfgaLba66KurXmhqizTlGwYwVes34XGoSLCPr3VkWq42Wa56K5oVVkZDmZb0UX8V5NJmwlOOJsE2qo3zZOndfnZ5r9rKe32JYaAqj1YXXdpC47yi9Q0Ci1uhz0FxmIGwVL_Cnz2bTMruAkQqThAbiI_JqQf3V-"/>
+</div>
+<div class="min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">1984</h2>
+<p class="font-label-md text-label-md text-secondary">George Orwell</p>
+<div class="flex items-center gap-1.5 mt-1.5">
+<span class="font-label-sm text-label-sm text-secondary">Emprunt :</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">12/03/2026</span>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<button aria-label="Retirer 1984" class="h-8 px-3 rounded-lg bg-error-container text-error hover:bg-error hover:text-on-error font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-colors shrink-0" onclick="removeItem('row-book-1', '1984')">
+<span class="material-symbols-outlined text-[16px]">bookmark_remove</span>
+<span>Retirer</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-secondary">Retour prévu :</span>
+</div>
+<span class="bg-error-container/70 text-on-error-container px-2.5 py-0.5 rounded-full font-label-sm text-label-sm font-semibold">
+            26/03/2026 (Bientôt)
+          </span>
+</div>
+</div>
+<!-- Subtle Hairline Separator Layer -->
+<div class="h-[1px] bg-surface-container-high w-full"></div>
+<!-- Item 2: Sapiens -->
+<div class="p-4 bg-surface-container-low/40 transition-all duration-300 hover:bg-surface-container-low flex flex-col gap-3" id="row-book-2">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-12 h-16 rounded-lg bg-surface-container-high overflow-hidden shrink-0 shadow-sm flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Scholarly book cover of Sapiens A Brief History of Humankind by Yuval Noah Harari with elegant warm golden ochre and clean minimalist museum aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz1Py1a1MIKWj1vt_vvZ5Vvwqv5sfexSpNJMo7oKYXm4ItwZavaLyymtZZaHuuwmCWO-xjq8QClSzWjqtCANf6Szzo1eoaMFkD1Jt7LUrthQl19dsOZ_t9XQDBdJ3L1dU1wRRjADoS9rZQpqovcGJSeytfu88VFUFyNdmRvb1nP1P17902wopHzgYBTImv9vc7fDZHQCuPCX2hwPp2vqScWl_6CCVOmzVH8AbMKJskDJBaKJMOUrZC"/>
+</div>
+<div class="min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Sapiens</h2>
+<p class="font-label-md text-label-md text-secondary">Yuval Noah Harari</p>
+<div class="flex items-center gap-1.5 mt-1.5">
+<span class="font-label-sm text-label-sm text-secondary">Emprunt :</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">18/03/2026</span>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<button aria-label="Retirer Sapiens" class="h-8 px-3 rounded-lg bg-error-container text-error hover:bg-error hover:text-on-error font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-colors shrink-0" onclick="removeItem('row-book-2', 'Sapiens')">
+<span class="material-symbols-outlined text-[16px]">bookmark_remove</span>
+<span>Retirer</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm text-secondary">Retour prévu :</span>
+</div>
+<span class="bg-surface-container-high text-tertiary px-2.5 py-0.5 rounded-full font-label-sm text-label-sm font-semibold">
+            01/04/2026 (En cours)
+          </span>
+</div>
+</div>
+<!-- Subtle Hairline Separator Layer -->
+<div class="h-[1px] bg-surface-container-high w-full"></div>
+<!-- Item 3: Le Petit Prince -->
+<div class="p-4 bg-surface-container-lowest transition-all duration-300 hover:bg-surface-container-low/60 flex flex-col gap-3" id="row-book-3">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-12 h-16 rounded-lg bg-surface-container-high overflow-hidden shrink-0 shadow-sm flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Delicate watercolor celestial illustration for Le Petit Prince book cover featuring dreamy star fields, a gentle rose, and warm soft night indigo tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6Swy-9fIDrVuSjoDbXIeQiLeXiQ62HVgXaFBI6cvG7rDe_kCm_j9PUUTJc0PblT2Y2jWRXNXAw0szbu50fcWetrHuZsV-67s1ylqfTrmLLDAeWShDJGbcAaI6WIL3xnBu8mK_nvV5CNlNixIYqS7cPYOFGWrjojaUeUICeu5IMTouTelAuNtYPFYTCG3QYNUTXntQ_I72hP1Nh0oj0XtMKzyMyq0axCHSnyG--nVDA2PiAXB8Hcg6"/>
+</div>
+<div class="min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Le Petit Prince</h2>
+<p class="font-label-md text-label-md text-secondary">A. de Saint-Exupéry</p>
+<div class="flex items-center gap-1.5 mt-1.5">
+<span class="font-label-sm text-label-sm text-secondary">Emprunt :</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">20/03/2026</span>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<button aria-label="Retirer Le Petit Prince" class="h-8 px-3 rounded-lg bg-error-container text-error hover:bg-error hover:text-on-error font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-colors shrink-0" onclick="removeItem('row-book-3', 'Le Petit Prince')">
+<span class="material-symbols-outlined text-[16px]">bookmark_remove</span>
+<span>Retirer</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-secondary">Retour prévu :</span>
+</div>
+<span class="bg-surface-container-high text-on-surface font-label-sm text-label-sm font-medium px-2.5 py-0.5 rounded-full">
+            03/04/2026
+          </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pedagogy Preview: Empty State Demo Box -->
+<div class="mt-8">
+<div class="flex items-center justify-between mb-2 px-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Exemple d'état vide</span>
+<span class="bg-secondary-container text-on-secondary-container font-code-sm text-code-sm px-2 py-0.5 rounded">Composant par défaut</span>
+</div>
+<div class="rounded-xl p-8 text-center bg-surface-container-low shadow-sm flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Ambient background visual circle -->
+<div class="w-24 h-24 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm mb-3">
+<span aria-label="Boîte aux lettres vide" class="text-[36px] select-none" role="img">📭</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">Votre liste est vide</h3>
+<p class="font-body-sm text-body-sm text-secondary max-w-xs mb-4">
+        Parcourez notre collection et ajoutez des livres à votre liste de lecture pour les retrouver ici.
+      </p>
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" data-path="accueil" href="#">
+<span class="material-symbols-outlined text-[18px]">explore</span>
+<span>Explorer la bibliothèque</span>
+</a>
+</div>
+</div>
+</div>
+<script>
+  let activeBookCount = 3;
+
+  function removeItem(elementId, bookTitle) {
+    const row = document.getElementById(elementId);
+    if (!row) return;
+
+    row.style.opacity = '0';
+    row.style.transform = 'translateX(20px)';
+    
+    setTimeout(() => {
+      row.remove();
+      activeBookCount = Math.max(0, activeBookCount - 1);
+      
+      const counter = document.getElementById('item-counter');
+      if (counter) {
+        counter.textContent = activeBookCount + (activeBookCount > 1 ? ' emprunts' : ' emprunt');
+      }
+
+      showToast(`"${bookTitle}" a été retiré de votre liste.`);
+
+      if (activeBookCount === 0) {
+        const container = document.getElementById('reading-list-container');
+        if (container) {
+          container.innerHTML = `
+            <div class="p-8 text-center flex flex-col items-center">
+              <span class="text-[32px] mb-2">✨</span>
+              <p class="font-headline-sm text-headline-sm text-on-surface font-bold">Tous vos emprunts sont terminés !</p>
+              <p class="font-body-sm text-body-sm text-secondary mt-1">Vous n'avez plus de retour en attente.</p>
+            </div>
+          `;
+        }
+      }
+    }, 250);
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toast-notification');
+    const toastMessage = document.getElementById('toast-message');
+    if (!toast || !toastMessage) return;
+
+    toastMessage.textContent = msg;
+    toast.classList.remove('-translate-y-24', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    setTimeout(() => {
+      dismissToast();
+    }, 3000);
+  }
+
+  function dismissToast() {
+    const toast = document.getElementById('toast-notification');
+    if (!toast) return;
+    toast.classList.add('-translate-y-24', 'opacity-0');
+    toast.classList.remove('translate-y-0', 'opacity-100');
+  }
+</script><footer class="mt-auto py-space-lg flex items-center justify-center text-center"><p class="font-label-md text-label-md text-secondary">KOUASSI Amos — Bibliothèque en Ligne — 2026</p></footer></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary-container font-semibold"><div class="flex items-center justify-around h-16 px-gutter-sm"><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-space-xs text-secondary hover:text-on-surface transition-colors" data-path="accueil" href="#"><span class="material-symbols-outlined text-[22px]">local_library</span><span class="font-label-sm text-label-sm">Accueil</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-space-xs text-secondary hover:text-on-surface transition-colors" data-path="ajouter-un-livre" href="#"><span class="material-symbols-outlined text-[22px]">bookmark_add</span><span class="font-label-sm text-label-sm">Ajouter</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-space-xs transition-colors text-primary-container font-semibold" data-path="ma-liste-de-lecture" href="#"><span class="material-symbols-outlined text-[22px]">collections_bookmark</span><span class="font-label-sm text-label-sm">Ma Liste</span></a></div></nav></body></html>
