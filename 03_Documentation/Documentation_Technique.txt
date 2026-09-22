@@ -1,0 +1,152 @@
+========================================
+DOCUMENTATION TECHNIQUE
+Bibliothèque en Ligne
+========================================
+Nom : KOUASSI Amos
+Date : Septembre 2026
+
+========================================
+1. PRÉSENTATION
+========================================
+
+Application web de gestion de bibliothèque permettant de
+rechercher, ajouter, modifier et supprimer des livres, ainsi
+que de gérer une liste de lecture personnelle.
+
+Technologies : HTML5, CSS3, JavaScript, PHP 8.x, MySQL 8.x
+
+========================================
+2. ARCHITECTURE
+========================================
+
+Projet_Final_Bibliotheque/
+├── 01_Cahier_des_Charges/
+│   └── Cahier_des_Charges.txt
+├── 02_Wireframing/
+│   └── Wireframing.txt
+├── 03_Documentation/
+│   └── Documentation_Technique.txt
+├── 04_Code_Source/
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── details.html
+│   │   ├── ajouter.html
+│   │   ├── modifier.html
+│   │   ├── wishlist.html
+│   │   ├── api_livres.php
+│   │   ├── api_liste.php
+│   │   └── assets/
+│   │       ├── css/style.css
+│   │       └── js/app.js
+│   ├── app/
+│   │   ├── config.php
+│   │   ├── db.php
+│   │   └── helpers.php
+│   └── sql/
+│       └── schema.sql
+└── README.txt
+
+========================================
+3. BASE DE DONNÉES
+========================================
+
+3.1 Tables
+----------
+
+livres :
+  id INT AUTO_INCREMENT PRIMARY KEY
+  titre VARCHAR(100)
+  auteur VARCHAR(100)
+  description TEXT
+  maison_edition VARCHAR(100)
+  nombre_exemplaire INT
+
+lecteurs :
+  id INT AUTO_INCREMENT PRIMARY KEY
+  nom VARCHAR(100)
+  prenom VARCHAR(100)
+  email VARCHAR(100) UNIQUE
+
+liste_lecture :
+  id INT AUTO_INCREMENT PRIMARY KEY
+  id_livre INT (FK → livres.id)
+  id_lecteur INT (FK → lecteurs.id)
+  date_emprunt DATE
+  date_retour DATE
+
+3.2 Relations
+--------------
+- liste_lecture.id_livre → livres.id (N..1)
+- liste_lecture.id_lecteur → lecteurs.id (N..1)
+
+========================================
+4. API PHP
+========================================
+
+4.1 api_livres.php
+-------------------
+Actions :
+- list : liste tous les livres
+- search?q= : recherche par titre/auteur
+- get&id= : détail d'un livre
+- add (POST) : ajouter un livre
+- update (POST) : modifier un livre
+- delete (POST) : supprimer un livre
+
+4.2 api_liste.php
+------------------
+Actions :
+- list : liste de lecture de l'utilisateur
+- add (POST) : ajouter à la liste
+- remove (POST) : retirer de la liste
+- check&id_livre= : vérifier si dans la liste
+
+========================================
+5. SÉCURITÉ
+========================================
+
+- Requêtes préparées PDO (anti injection SQL)
+- htmlspecialchars() via fonction e() (anti XSS)
+- Validation des entrées côté serveur
+- Structure séparée (app/ vs public/)
+
+========================================
+6. INSTALLATION
+========================================
+
+Prérequis :
+- Laragon (PHP 8.x + MySQL)
+- Navigateur moderne
+
+Étapes :
+1. Copier 04_Code_Source/ dans C:\laragon\www\bibliotheque\
+2. Ouvrir phpMyAdmin (http://localhost/phpmyadmin)
+3. Importer sql/schema.sql
+4. Ouvrir http://localhost/bibliotheque/
+
+Identifiants MySQL :
+- Hôte : localhost
+- Utilisateur : root
+- Mot de passe : (vide)
+- Base : bibliotheque
+
+========================================
+7. FONCTIONNALITÉS
+========================================
+
+1. Accueil : description + recherche + collection
+2. Détails : informations complètes + actions
+3. Ajout : formulaire avec validation
+4. Modification : formulaire pré-rempli
+5. Liste de lecture : emprunts + suppression
+6. API RESTful : CRUD complet via JSON
+
+========================================
+8. ECOCONCEPTION
+========================================
+
+- Pas de bibliothèques externes lourdes
+- CSS sans frameworks (code léger)
+- JavaScript vanilla (pas de jQuery)
+- Images non nécessaires (interface texte)
+- Requêtes SQL optimisées

@@ -5,7 +5,7 @@ COLLATE utf8mb4_unicode_ci;
 
 USE bibliotheque;
 
--- Table utilisateurs (authentification + rôles)
+-- Table utilisateurs
 CREATE TABLE IF NOT EXISTS users (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nom VARCHAR(100) NOT NULL,
@@ -37,23 +37,24 @@ CREATE TABLE IF NOT EXISTS liste_lecture (
   FOREIGN KEY (id_user) REFERENCES users(id) ON DELETE CASCADE
 );
 
--- Utilisateurs de test (mot de passe: admin123 / lecteur123)
+-- Utilisateurs de test
+-- admin123 pour admin, lecteur123 pour les autres
 INSERT INTO users (nom, prenom, email, password_hash, role) VALUES
-('KOUASSI', 'Amos', 'admin@biblio.com', '$2y$10$YourHashHere', 'admin'),
-('DIALLO', 'Fatou', 'fatou@mail.com', '$2y$10$YourHashHere', 'lecteur'),
-('KONE', 'Moussa', 'moussa@mail.com', '$2y$10$YourHashHere', 'lecteur');
+('KOUASSI', 'Amos', 'admin@biblio.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin'),
+('DIALLO', 'Fatou', 'fatou@mail.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'lecteur'),
+('KONE', 'Moussa', 'moussa@mail.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'lecteur');
 
 -- Livres de test
 INSERT INTO livres (titre, auteur, description, maison_edition, nombre_exemplaire) VALUES
-('Le Petit Prince', 'Antoine de Saint-Exupéry', 'Un petit prince voyage de planète en planète et rencontre des adultes étranges.', 'Gallimard', 5),
-('L\'Étranger', 'Albert Camus', 'Meursault, un homme indifférent au monde qui l\'entoure, commet un meurtre.', 'Gallimard', 3),
-('Les Misérables', 'Victor Hugo', 'L\'histoire de Jean Valjean qui cherche la rédemption.', 'A. Lacroix', 4),
-('Dune', 'Frank Herbert', 'Paul Atréides mène une révolte sur la planète Arrakis.', 'L\'Atalante', 2),
-('1984', 'George Orwell', 'Winston Smith tente de résister au Grand Frère.', 'Gallimard', 3),
-('Fondation', 'Isaac Asimov', 'Un mathématicien prédit la chute de l\'Empire galactique.', 'Presses-Pocket', 2),
-('Fahrenheit 451', 'Ray Bradbury', 'Un pompier remet en question son métier de brûleur de livres.', 'Denoël', 2),
-('Le Seigneur des Anneaux', 'J.R.R. Tolkien', 'Frodon doit détruire un anneau magique.', 'Bourgois', 3),
-('Harry Potter', 'J.K. Rowling', 'Un jeune orphelin découvre qu\'il est sorcier.', 'Gallimard', 5),
-('Candide', 'Voltaire', 'Un jeune homme naïf voyage à travers le monde.', 'Flammarion', 2),
-('Monte-Cristo', 'Alexandre Dumas', 'Edmond Dantès poursuit sa vengeance.', 'Lafitte', 3),
-('Vingt mille lieues', 'Jules Verne', 'Le professeur Aronnax explore les océans.', 'Hetzel', 2);
+('Le Petit Prince', 'Antoine de Saint-Exupéry', 'Un petit prince voyage de planète en planète et rencontre des adultes étranges. Une œuvre poétique et philosophique.', 'Gallimard', 5),
+('L\'Étranger', 'Albert Camus', 'Meursault, un homme indifférent au monde qui l''entoure, commet un meurtre sans raison apparente sous un soleil écrasant.', 'Gallimard', 3),
+('Les Misérables', 'Victor Hugo', 'L''histoire de Jean Valjean, ancien forçat, qui cherche la rédemption dans la France du XIXe siècle.', 'A. Lacroix', 4),
+('Dune', 'Frank Herbert', 'Paul Atréides mène une révolte sur la planète désertique d''Arrakis, source de l''épice la plus précieuse.', 'L''Atalante', 2),
+('1984', 'George Orwell', 'Dans un monde totalitaire, Winston Smith tente de résister au contrôle absolu du Grand Frère.', 'Gallimard', 3),
+('Fondation', 'Isaac Asimov', 'Un mathématicien prédit la chute de l''Empire galactique et crée un plan pour raccourcir les siècles de barbarie.', 'Presses-Pocket', 2),
+('Fahrenheit 451', 'Ray Bradbury', 'Un pompier dont le métier est de brûler les livres commence à remettre en question son rôle.', 'Denoël', 2),
+('Le Seigneur des Anneaux', 'J.R.R. Tolkien', 'Frodon le Hobbit doit détruire un anneau magique pour sauver la Terre du Milieu.', 'Bourgois', 3),
+('Harry Potter à l''école des sorciers', 'J.K. Rowling', 'Un jeune orphelin découvre qu''il est sorcier et intègre l''école Poudlard.', 'Gallimard', 5),
+('Candide', 'Voltaire', 'Un jeune homme naïf voyage à travers le monde et découvre les cruautés de la vie.', 'Flammarion', 2),
+('Le Comte de Monte-Cristo', 'Alexandre Dumas', 'Edmond Dantès s''échappe du château d''If et poursuit sa vengeance en tant que comte mystérieux.', 'Lafitte', 3),
+('Vingt mille lieues sous les mers', 'Jules Verne', 'Le professeur Aronnax explore les océans à bord du Nautilus du capitaine Nemo.', 'Hetzel', 2);
